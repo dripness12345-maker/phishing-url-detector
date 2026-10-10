@@ -1,0 +1,203 @@
+/**
+ * File: popup.css
+ * Purpose: Styling for the extension popup UI. Uses a modern dark theme.
+ * Author: Phishing URL Detector Project
+ */
+
+:root {
+    --bg-color: #1e1e2e;
+    --card-bg: #282a36;
+    --text-main: #f8f8f2;
+    --text-muted: #bd93f9;
+    --accent: #6272a4;
+    --safe: #50fa7b;
+    --warning: #f1fa8c;
+    --danger: #ff5555;
+}
+
+body {
+    width: 380px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+
+header {
+    background-color: var(--card-bg);
+    padding: 15px;
+    border-bottom: 1px solid var(--accent);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon {
+    font-size: 24px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+main {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.subtitle {
+    font-size: 12px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.status-indicator {
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    background-color: var(--accent);
+}
+
+.input-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: var(--text-muted);
+}
+
+button {
+    background-color: var(--text-muted);
+    color: var(--bg-color);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Results section styles */
+.hidden {
+    display: none !important;
+}
+
+#results-area {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--accent);
+}
+
+.score-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.progress-bar-bg {
+    height: 10px;
+    background-color: var(--bg-color);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.verdict {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Status Colors */
+.safe {
+    color: var(--safe);
+}
+.progress-bar-fill.safe {
+    background-color: var(--safe);
+}
+
+.warning {
+    color: var(--warning);
+}
+.progress-bar-fill.warning {
+    background-color: var(--warning);
+}
+
+.danger {
+    color: var(--danger);
+}
+.progress-bar-fill.danger {
+    background-color: var(--danger);
+}
+
+h4 {
+    margin: 10px 0 5px 0;
+    font-size: 13px;
+}
+
+ul {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 12px;
+}
+
+li {
+    margin-bottom: 4px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 11px;
+    color: var(--accent);
+    background-color: var(--card-bg);
+}

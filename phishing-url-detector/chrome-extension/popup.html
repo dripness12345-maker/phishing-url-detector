@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing URL Detector</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <span class="icon">🛡️</span>
+            <h1>Phishing Detector</h1>
+        </div>
+    </header>
+
+    <main>
+        <!-- Current Page Status -->
+        <section id="page-status-section" class="card">
+            <h3>Current Page Status</h3>
+            <div id="page-status" class="status-indicator">
+                Scanning page...
+            </div>
+        </section>
+
+        <!-- Manual URL Checker -->
+        <section class="card">
+            <h3>Manual URL Check</h3>
+            <p class="subtitle">Paste a suspicious URL below to analyze it.</p>
+            
+            <div class="input-group">
+                <input type="text" id="url-input" placeholder="https://example.com" autocomplete="off">
+                <button id="check-btn">Check</button>
+            </div>
+
+            <!-- Results Section (Hidden by default) -->
+            <div id="results-area" class="hidden">
+                <div class="score-container">
+                    <span>Risk Score:</span>
+                    <span id="score-text">0/100</span>
+                </div>
+                
+                <div class="progress-bar-bg">
+                    <div id="progress-bar-fill" class="progress-bar-fill safe"></div>
+                </div>
+                
+                <div id="verdict" class="verdict safe">Looks Safe!</div>
+                
+                <h4>Reasons:</h4>
+                <ul id="reasons-list">
+                    <!-- Reasons will be injected here via JS -->
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        Cybersecurity Awareness Project
+    </footer>
+
+    <!-- Scripts: Include detector logic first, then UI logic -->
+    <script src="detector.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>
